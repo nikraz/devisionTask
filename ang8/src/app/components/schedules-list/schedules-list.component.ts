@@ -11,6 +11,7 @@ export class SchedulesListComponent implements OnInit {
   constructor(private ScheduleService: ScheduleService) { }
 
   ngOnInit() {
+      console.log("data");
 
       this.ScheduleService.getSchedule().subscribe((res)=>{
           console.log("data");

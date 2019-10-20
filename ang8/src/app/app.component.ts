@@ -9,7 +9,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 export class AppComponent {
     opened = true;
-    @ViewChild('sidenav',) sidenav: MatSidenav;
+    @ViewChild('sidenav') sidenav: MatSidenav;
 
     ngOnInit() {
         console.log(window.innerWidth)
