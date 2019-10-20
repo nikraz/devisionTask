@@ -33,7 +33,7 @@ class ScheduleHandler implements RequestHandlerInterface
 
         $method = $request->getMethod();
 
-        switch (strtolower($method)) {
+         switch (strtolower($method)) {
             case 'get':
                 $parameters = $request->getQueryParams();
 //                var_dump($parameters);
