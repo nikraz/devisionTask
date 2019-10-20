@@ -33,3 +33,29 @@
 • По име на парцел
 • По култура
 • По дата на обработване. По име на трактор
+
+
+## Currnet task status
+Използвани са zend expressive 3 и angular 8. PHP 7.2 & node12.12.0. Влезте в zf3/ : vendor/bin/doctrine orm:schema-tool:update --dump-sql . Пейстнете резултата от командата в новосъздадена база данни devision.
+
+INSERT INTO `parcels` (`name`, `size`,`product`) VALUES
+  ('testParcelName1',222.22,'testParcelProduct1');
+INSERT INTO `tractors` (`name`) VALUES
+('testTractorName1');
+INSERT INTO `schedule` (`size`,`tractors_id`, `parcels_id`, `date`) VALUES
+  (222.21,1,1,'2019-12-18 13:17:17');
+  
+php -S 0.0.0.0:8080 -t public/ public/index.php
+
+Сменете папката на ang8: ng build 
+ℹ ｢wdm｣: Failed to compile.
+
+#### има странен бъг и се чупи при първонъчален билд и трябва да се едитне ang8/src/app/app.component.ts със спейс например, за да се докомпилира) 
+
+ℹ ｢wdm｣: Compiling...
+95% emitting CopyPlugin    
+    ERROR in src/app/app.component.ts(12,6): error TS2554: Expected 2 arguments, but got 1.
+    Time: 390ms
+    ℹ ｢wdm｣: Compiled successfully.
+    
+До момента прокета е на почти сетъп фаза и трябва да дооправя 'zfr_cors' => [ 'allowed_origins'  ''] да приема рекуести от http://localhost:4200.
